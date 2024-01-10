@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Stack</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/818b44a7fe.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="topnav">
+    <a class="active" href="index.html">Home</a>
+    <a href="apps.html">Apps</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+    <button onclick="toggleDarkMode()" class="btn" id="darkBTN"><i class="fa-regular fa-moon"></i></button>
+  </div>
+
+  <div class="main">
+    <h1>Minecraft Apps</h1>
+    <h3>Convert item into minecraft stack</h3>
+    <h3>Find amazing seeds</h3>
+    <h3>Convert to Nether Cords</h3>
+    <h3>And find amazing packs!</h3>
+    <p>Welcome to our unique corner of the Minecraft universe, where numbers transform into tangible blocks through the
+      ingenuity of Aayanwashere and Cryptomine. Immerse yourself in the magic of conversion as we seamlessly turn
+      numerical values into Minecraft stack units. Whether you're a seasoned player or a newcomer to the pixelated realm,
+      our tool brings a touch of creativity to your calculations. Explore the seamless integration of Aayanwashere's
+      expertise and Cryptomine's innovation, making number-crunching an adventure in itself. Join us in this
+      block-by-block journey, where digits come to life in the enchanting language of Minecraft.</p>
+  </div>
+
+  <div class="footer">
+    <h6>Not an official Minecraft product. ©2023 - 2024 StackApp. All rights reserved.</h6>
+    <img src="images/logo.png" height="48" width="48">
+  </div>
+  
+  <script>
+    function toggleDarkMode() {
+      var body = document.body;
+      body.classList.toggle("dark-mode");
+      var icon = document.getElementById("darkBTN").querySelector("i");
+      if (icon.className === "fa-regular fa-moon") {
+        icon.className = "fa-regular fa-sun";
+        localStorage.setItem("darkModeEnabled", "true");
+      } else {
+        icon.className = "fa-regular fa-moon";
+        localStorage.removeItem("darkModeEnabled");
+      }
+    }
+
+    // Retrieve dark mode state from local storage
+    document.addEventListener('DOMContentLoaded', function () {
+      var darkModeStatus = localStorage.getItem("darkModeEnabled");
+      if (darkModeStatus === 'true') {
+        document.body.classList.add('dark-mode');
+        document.getElementById('darkBTN').querySelector('i').className = 'fa-regular fa-sun';
+      } else {
+        document.body.classList.remove('dark-mode');
+        document.getElementById('darkBTN').querySelector('i').className = 'fa-regular fa-moon';
+      }
+    });
+  </script>
+</body>
+
+</html>

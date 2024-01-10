@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>About</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/818b44a7fe.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="apps.html">Apps</a>
+    <a href="contact.html">Contact</a>
+    <a class="active" href="about.html">About</a>
+    <button onclick="toggleDarkMode()" class="btn" id="darkBTN"><i class="fa-regular fa-moon"></i></button>
+  </div>
+
+  <div class="main">
+    <h1>About Us</h1>
+    <p>Crypto and aayanwashere joined forces to create an extraordinary webpage that revolutionizes the way numbers are
+      visualized - by transforming them into Minecraft stacks. This incredibly innovative concept was brought to life
+      through the collaboration of these two talented individuals. aayanwashere's exceptional coding skills came into
+      play as he made the program necessary to process the numbers and translate them into Minecraft stacks on the
+      webpage. Meanwhile, Crypto's expertise in CSS propelled the project to new heights, as he skillfully designed the
+      page's layout, colors, and animations. Working in perfect harmony, Crypto and aayanwashere seamlessly integrated
+      their abilities, resulting in a fabulous webpage that showcases their combined talent and pushes the boundaries of
+      creativity.</p>
+  </div>
+
+  <div class="footer">
+    <h6>Not an official Minecraft product. ©2023 - 2024 StackApp. All rights reserved.</h6>
+    <img src="images/logo.png" height="48" width="48">
+  </div>
+
+  <script>
+    function toggleDarkMode() {
+      var body = document.body;
+      body.classList.toggle("dark-mode");
+      var icon = document.getElementById("darkBTN").querySelector("i");
+      if (icon.className === "fa-regular fa-moon") {
+        icon.className = "fa-regular fa-sun";
+        localStorage.setItem("darkModeEnabled", "true");
+      } else {
+        icon.className = "fa-regular fa-moon";
+        localStorage.removeItem("darkModeEnabled");
+      }
+    }
+
+    // Retrieve dark mode state from local storage
+    document.addEventListener('DOMContentLoaded', function () {
+      var darkModeStatus = localStorage.getItem("darkModeEnabled");
+      if (darkModeStatus === 'true') {
+        document.body.classList.add('dark-mode');
+        document.getElementById('darkBTN').querySelector('i').className = 'fa-regular fa-sun';
+      } else {
+        document.body.classList.remove('dark-mode');
+        document.getElementById('darkBTN').querySelector('i').className = 'fa-regular fa-moon';
+      }
+    });
+  </script>
+</body>
+
+</html>
